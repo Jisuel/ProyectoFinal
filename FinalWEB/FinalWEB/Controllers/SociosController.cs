@@ -13,6 +13,7 @@ using FinalWEB.Models;
 
 namespace FinalWEB.Controllers
 {
+    [Authorize]
     public class SociosController : Controller
     {
         private DBModels db = new DBModels();
@@ -26,7 +27,7 @@ namespace FinalWEB.Controllers
         [HttpGet]
         public ActionResult View(int id)
         {
-            Socios foto = new Socios();
+            Socios foto = new Socios(); 
 
             using (DBModels db = new DBModels())
             {
@@ -142,8 +143,12 @@ namespace FinalWEB.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            var query = from x in db.Socios where x.Id == id select x;
             Socios socios = db.Socios.Find(id);
-            db.Socios.Remove(socios);
+            foreach (var item in query)
+            {
+                item.Estatus = "Inactivo";
+            }
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -156,20 +161,5 @@ namespace FinalWEB.Controllers
             }
             base.Dispose(disposing);
         }
-
-        /*public ActionResult GetImage(int id)
-        {
-            Socios image = db.Socios.Find(id);
-            byte[] byteImage = image.Foto;
-
-            MemoryStream memoryStream = new MemoryStream(byteImage);
-            Image imagen = Image.FromStream(memoryStream);
-
-            memoryStream = new MemoryStream();
-            imagen.Save(memoryStream, ImageFormat.Jpeg);
-            memoryStream.Position = 0;
-
-            return File(memoryStream, "image/jpg");
-        }*/
     }
 }

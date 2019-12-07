@@ -1,10 +1,10 @@
 ﻿@model FinalWEB.Models.Socios
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Registrar";
 }
 
-<h2>Create</h2>
+<h2>Registrar</h2>
 
 
 @using (Html.BeginForm("Add", "Socios", FormMethod.Post, new { enctype = "multipart/form-data"}))
@@ -65,7 +65,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Sexo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.Sexo, new SelectList(new[] { "Masculino", "Femenino" }), "Seleccione", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -97,7 +97,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Membresia, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Membresia, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.Membresia, new SelectList(new[] { "Sencilla", "Intermedia", "Premium" }), "Seleccione", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Membresia, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -129,7 +129,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Estatus, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Estatus, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.Estatus, new SelectList(new[] { "Activo", "Inactivo" }), "Seleccione", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Estatus, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -152,14 +152,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Registrar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver a la Lista", "Index")
 </div>
 
 @section Scripts {

@@ -11,27 +11,75 @@ namespace FinalWEB.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Web;
     
     public partial class Socios
     {
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "Este campo es obligatorio")]
         public string Nombre { get; set; }
+
+        [Required(ErrorMessage = "Este campo es obligatorio")]
         public string Apellido { get; set; }
+
+        [Required(ErrorMessage = "Este campo es obligatorio")]
+        [Display(Name = "Cédula")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{7})[-. ]?([0-9]{1})$", ErrorMessage = "Debe ingresar un número de Cédula válido")]
         public long Cedula { get; set; }
+
+        [Required(ErrorMessage = "Este campo es obligatorio")]
         public string Foto { get; set; }
+
+        [Display(Name = "Dirección")]
+        [Required(ErrorMessage = "Este campo es obligatorio")]
         public string Direccion { get; set; }
+
+        [Required(ErrorMessage = "Este campo es obligatorio")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Número de Teléfono no válido")]
         public long Telefono { get; set; }
+
+        [Required(ErrorMessage = "Debe seleccionar una opción")]
         public string Sexo { get; set; }
+
+        [Required(ErrorMessage = "Este campo es obligatorio")]
+        [Range(0, 150)]
         public int Edad { get; set; }
+
+        [Display(Name = "Fecha Nacimiento")]
+        [Required(ErrorMessage = "Debe seleccionar una fecha de nacimiento")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public System.DateTime Fecha_Nacimiento { get; set; }
+
+
         public string Afiliados { get; set; }
+
+        [Required(ErrorMessage = "Debe seleccionar una opción")]
         public string Membresia { get; set; }
+
+        [Display(Name = "Lugar Trabajo")]
         public string Lugar_Trabajo { get; set; }
+
+        [Display(Name = "Dirección Oficina")]
         public string Direc_Oficina { get; set; }
+
+        [Display(Name = "Teléfono Oficina")]
         public Nullable<long> Tel_Oficina { get; set; }
+
+        [Required(ErrorMessage = "Debe seleccionar una opción")]
         public string Estatus { get; set; }
+
+        [Display(Name = "Fecha Ingreso")]
+        [Required(ErrorMessage = "Debe seleccionar una fecha de Ingreso")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public System.DateTime Fecha_Ingreso { get; set; }
+
+        [Display(Name = "Fecha Salida")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public Nullable<System.DateTime> Fecha_Salida { get; set; }
 
         public HttpPostedFileBase ImageFile { get; set; }

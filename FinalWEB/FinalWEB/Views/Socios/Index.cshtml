@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<FinalWEB.Models.Socios>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Socios";
 }
 
-<h2>Index</h2>
+<h2>Socios</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo Registro", "Create")
 </p>
 <table class="table">
     <tr>
@@ -119,9 +119,8 @@
             @Html.DisplayFor(modelItem => item.Fecha_Salida)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Detalles", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Inactivar", "Delete", new { id=item.Id })
         </td>
     </tr>
 }
