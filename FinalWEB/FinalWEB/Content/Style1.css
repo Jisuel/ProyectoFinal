@@ -128,12 +128,95 @@ p, a {
 
 .header h1 {
     font-size: 50px;
-    color: rgba(255, 152, 0, 0.75);
+    color: rgba(255, 152, 0, 0.90);
     font-family: "Audiowide-Regular";
     letter-spacing: 3px;
     margin: 0 auto;
 }
 
+.navbar-default {
+    background: none;
+    border: none;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.navbar-collapse {
+    padding: 0;
+    box-shadow: none;
+}
+
+    .navbar-collapse nav {
+        background-color: rgba(41, 41, 41, 0.50);
+        border-radius: 40px;
+    }
+
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+
+.navbar-nav {
+    float: none;
+    text-align: center;
+    background: none;
+    margin: 4em 0 0 0;
+}
+
+.header-top-info ul li {
+    display: inline-block;
+    float: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.navbar-nav li:after {
+    content: "";
+    position: absolute;
+    background: #FFFFFF;
+    height: 7px;
+    width: 7px;
+    top: 16px;
+    left: 0;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+
+.navbar-nav li.active:after {
+    background: none !important;
+    width: 0px !important;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+    border: solid 2px rgba(255, 255, 255, 0);
+}
+
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+        color: #ffffff;
+        border: solid 2px #ffffff;
+        background: rgba(255, 152, 0, .80);
+        border-radius: 20px;
+    }
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #ffffff;
+}
+
+.navbar-nav > li > a {
+    font-size: 1.1em;
+    padding: .5em 1.5em;
+    margin: 0 1em;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    border: solid 2px #ffffff;
+    background: rgba(255, 152, 0, .80);
+    border-radius: 20px;
+}
 
 .design-w3l {
     width: 36%;

@@ -1,6 +1,7 @@
 ﻿@model FinalWEB.Models.RegisterViewModel
 @{
     ViewBag.Title = "Registrarse";
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -10,10 +11,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="~/Content/style1.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/Style1.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
+    <div class="header-top">
+        <div class="container">
+            <div class="header-top-info">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                        <nav>
+                            <ul class="nav navbar-nav">
+                                <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Socios", "Index", "Socios")</li>
+                                <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
+                                <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                                <li>@Html.ActionLink("Iniciar Sesión", "Login", "Account")</li>
+                                <li class="active">@Html.ActionLink("Registrarse", "Register", "Account")</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
     <div class="padding-all">
         <div class="header">
             <h1>Registro Gaming</h1>
@@ -25,10 +58,10 @@
                 {
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary("", new { @class = "text-danger" })
-                            @Html.TextBoxFor(m => m.Email, new { @class = "padding", @type = "text", @placeholder = "Correo electrónico" })
-                            @Html.PasswordFor(m => m.Password, new { @class = "padding", @type = "password", @placeholder = "Contraseña" })
-                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "padding", @type = "password", @placeholder = "Confirmar Contraseña" })
-                            <input type="submit" class="btn btn-default" value="Registrarse" />
+                    @Html.TextBoxFor(m => m.Email, new { @class = "padding", @type = "text", @placeholder = "Correo electrónico" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "padding", @type = "password", @placeholder = "Contraseña" })
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "padding", @type = "password", @placeholder = "Confirmar Contraseña" })
+                    <input type="submit" class="btn btn-default" value="Registrarse" />
                 }
             </div>
             <div class="clear"> </div>
