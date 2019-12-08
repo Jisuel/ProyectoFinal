@@ -395,6 +395,12 @@ namespace FinalWEB.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public ActionResult Logout()
+        {
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            return RedirectToAction("Login", "Account");
+        }
+
         //
         // GET: /Account/ExternalLoginFailure
         [AllowAnonymous]

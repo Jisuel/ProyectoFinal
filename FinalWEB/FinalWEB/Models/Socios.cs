@@ -66,6 +66,7 @@ namespace FinalWEB.Models
         public string Direc_Oficina { get; set; }
 
         [Display(Name = "Teléfono Oficina")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Número de Teléfono no válido")]
         public Nullable<long> Tel_Oficina { get; set; }
 
         [Required(ErrorMessage = "Debe seleccionar una opción")]

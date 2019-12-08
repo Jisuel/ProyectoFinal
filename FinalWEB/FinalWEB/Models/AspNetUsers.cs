@@ -11,6 +11,7 @@ namespace FinalWEB.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class AspNetUsers
     {
@@ -25,6 +26,8 @@ namespace FinalWEB.Models
         public Nullable<System.DateTime> LockoutEndDateUtc { get; set; }
         public bool LockoutEnabled { get; set; }
         public int AccessFailedCount { get; set; }
+
+        [Display(Name = "Usuarios Registrados")]
         public string UserName { get; set; }
     }
 }

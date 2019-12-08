@@ -1,7 +1,207 @@
 ﻿@{
     ViewBag.Title = "About";
+    Layout = null;
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/Inicio.css" type="text/css" media="all" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/chocolat.css" type="text/css" media="all">
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header-top">
+        <div class="container">
+            <div class="header-top-info">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                        <nav>
+                            <ul class="nav navbar-nav">
+                                <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                                <li class="active">@Html.ActionLink("Juegos", "About", "Home")</li>
+                                <li>@Html.ActionLink("Socios", "Index", "Socios")</li>
+                                <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
+                                <li>@Html.ActionLink("Cerrar Sesión", "Logout", "Account")</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio" id="gallery">
+        <div class="container">
+            <div class="agileits-title">
+                <h3>Nuestros Juegos</h3><br /><br /><br />
+            </div>
+
+            <div class="filtr-container w3layouts agileits">
+
+                <div class="filtr-item w3layouts agileits portfolio-t" data-category="1, 5" data-sort="Busy streets">
+                    <a href="~/images/p1.jpg" class="b-link-stripe w3layouts agileits b-animate-go thickbox">
+                        <figure>
+                            <img src="~/images/p1.jpg" class="img-responsive w3layouts agileits" alt="W3layouts Agileits">
+                            <figcaption>
+                                <h3>Gaming <span>Club</span></h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+
+                <div class="filtr-item w3layouts agileits" data-category="2, 5" data-sort="Luminous night">
+                    <a href="~/images/p2.jpg" class="b-link-stripe w3layouts agileits b-animate-go thickbox">
+                        <figure>
+                            <img src="~/images/p2.jpg" class="img-responsive w3layouts agileits" alt="W3layouts Agileits">
+                            <figcaption>
+                                <h3>Gaming <span>Club</span></h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+
+                <div class="filtr-item w3layouts agileits" data-category="1, 4" data-sort="City wonders">
+                    <a href="~/images/p3.jpg" class="b-link-stripe w3layouts agileits b-animate-go thickbox">
+                        <figure>
+                            <img src="~/images/p3.jpg" class="img-responsive w3layouts agileits" alt="W3layouts Agileits">
+                            <figcaption>
+                                <h3>Gaming <span>Club</span></h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+
+                <div class="filtr-item w3layouts agileits" data-category="3" data-sort="In production">
+                    <a href="~/images/p4.jpg" class="b-link-stripe w3layouts agileits b-animate-go thickbox">
+                        <figure>
+                            <img src="~/images/p5.jpg" class="img-responsive w3layouts agileits" alt="W3layouts Agileits">
+                            <figcaption>
+                                <h3>Gaming <span>Club</span></h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+
+                <div class="filtr-item w3layouts agileits" data-category="3, 4" data-sort="Industrial site">
+                    <a href="~/images/p6.jpg" class="b-link-stripe w3layouts agileits b-animate-go thickbox">
+                        <figure>
+                            <img src="~/images/p6.jpg" class="img-responsive w3layouts agileits" alt="W3layouts Agileits">
+                            <figcaption>
+                                <h3>Gaming <span>Club</span></h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+
+                <div class="filtr-item w3layouts agileits" data-category="2, 4" data-sort="Peaceful lake">
+                    <a href="~/images/p7.jpg" class="b-link-stripe w3layouts agileits b-animate-go thickbox">
+                        <figure>
+                            <img src="~/images/p7.jpg" class="img-responsive w3layouts agileits" alt="W3layouts Agileits">
+                            <figcaption>
+                                <h3>Gaming <span>Club</span></h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+
+                <div class="filtr-item w3layouts agileits" data-category="1, 5" data-sort="City lights">
+                    <a href="~/images/p8.jpg" class="b-link-stripe w3layouts agileits b-animate-go thickbox">
+                        <figure>
+                            <img src="~/images/p8.jpg" class="img-responsive w3layouts agileits" alt="W3layouts Agileits">
+                            <figcaption>
+                                <h3>Gaming <span>Club</span></h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+
+                <div class="filtr-item w3layouts agileits" data-category="2, 4" data-sort="Dreamhouse">
+                    <a href="~/images/11.jpg" class="b-link-stripe w3layouts agileits b-animate-go thickbox">
+                        <figure>
+                            <img src="~/images/p9.jpg" class="img-responsive w3layouts agileits" alt="W3layouts Agileits">
+                            <figcaption>
+                                <h3>Gaming <span>Club</span></h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+
+                <div class="filtr-item w3layouts agileits" data-category="2, 4" data-sort="Dreamhouse">
+                    <a href="~/images/2.jpg" class="b-link-stripe w3layouts agileits b-animate-go thickbox">
+                        <figure>
+                            <img src="~/images/p10.jpg" class="img-responsive w3layouts agileits" alt="W3layouts Agileits">
+                            <figcaption>
+                                <h3>Gaming <span>Club</span></h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="col-md-4 amet-sed">
+                    <div class="footer-title">
+                        <h3>Nosotros</h3>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="col-md-4 amet-sed amet-medium">
+                    <div class="footer-title">
+                        <h3>Obtener Beneficios</h3>
+                    </div>
+                    <p><a>@Html.ActionLink("Tipos de Pases", "Login", "Account")</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt lorem sed velit fermentum eget placerat. </p>
+                    <p><a>@Html.ActionLink("Comprar Pases", "Register", "Account")</a> Sed tincidunt lorem sed velit fermentum eget placerat. Lorem ipsum dolor sit, consectetur adipiscing elit. </p>
+                </div>
+                <div class="col-md-4 amet-sed ">
+                    <div class="footer-title">
+                        <h3>Síguenos</h3>
+                    </div>
+                    <div class="agileinfo-social-grids">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="support">
+                        <form action="#" method="post">
+                            <input type="email" placeholder="Correo Electrónico..." required="">
+                            <input type="submit" value="Enviar" class="botton" style="padding:8px 20px">
+                        </form>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -2,158 +2,249 @@
 
 @{
     ViewBag.Title = "Inactivar";
+    Layout = null;
 }
 
-<h2>Inactivar</h2>
-
-<h3>Seguro de que desea inactivar este socio?</h3>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellido)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Apellido)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cedula)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cedula)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Foto)
-        </dt>
-
-        <dd>
-            <img src="@Url.Content(Model.Foto)" width="100" />
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sexo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sexo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Edad)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Edad)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Fecha_Nacimiento)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fecha_Nacimiento)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Afiliados)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Afiliados)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Membresia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Membresia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Lugar_Trabajo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Lugar_Trabajo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Direc_Oficina)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Direc_Oficina)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Tel_Oficina)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tel_Oficina)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Estatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Estatus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Fecha_Ingreso)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fecha_Ingreso)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Fecha_Salida)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fecha_Salida)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Inactivar" class="btn btn-default" /> |
-            @Html.ActionLink("Volver a la Lista", "Index")
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/Inicio.css" type="text/css" media="all" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/chocolat.css" type="text/css" media="all">
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header-top">
+        <div class="container">
+            <div class="header-top-info">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                        <nav>
+                            <ul class="nav navbar-nav">
+                                <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Juegos", "About", "Home")</li>
+                                <li class="active">@Html.ActionLink("Socios", "Index", "Socios")</li>
+                                <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
+                                <li>@Html.ActionLink("Cerrar Sesión", "Logout", "Account")</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
         </div>
-    }
-</div>
+    </div><br /><br />
+    <h1 style="text-align:center; color:white; font-family:'Roboto Condensed', sans-serif">Inactivar Socio</h1><br />
+    <div id="tabla2">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Apellido)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cedula)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cedula)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Direccion)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Telefono)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Sexo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sexo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Edad)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Edad)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Fecha_Nacimiento)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fecha_Nacimiento)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Afiliados)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Afiliados)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Membresia)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Membresia)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Lugar_Trabajo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Lugar_Trabajo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Direc_Oficina)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Direc_Oficina)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Tel_Oficina)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tel_Oficina)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Estatus)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Estatus)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Fecha_Ingreso)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fecha_Ingreso)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Fecha_Salida)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fecha_Salida)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Foto)
+            </dt>
+
+            <dd>
+                <img src="@Url.Content(Model.Foto)" width="100" />
+            </dd>
+
+        </dl>
+        <br />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Inactivar" class="btn btn-danger" id="boton1" /> |
+                @Html.ActionLink("Volver a la Lista", "Index")
+            </div>
+        }
+    </div><br /><br />
+    <div class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="col-md-4 amet-sed">
+                    <div class="footer-title">
+                        <h3>Nosotros</h3>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="col-md-4 amet-sed amet-medium">
+                    <div class="footer-title">
+                        <h3>Beneficios</h3>
+                    </div>
+                    <p><a>@Html.ActionLink("Tipos de Pases", "Login", "Account")</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt lorem sed velit fermentum eget placerat. </p>
+                    <p><a>@Html.ActionLink("Obtener Pases", "Register", "Account")</a> Sed tincidunt lorem sed velit fermentum eget placerat. Lorem ipsum dolor sit, consectetur adipiscing elit. </p>
+                </div>
+                <div class="col-md-4 amet-sed ">
+                    <div class="footer-title">
+                        <h3>Síguenos</h3>
+                    </div>
+                    <div class="agileinfo-social-grids">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="support">
+                        <form action="#" method="post">
+                            <input type="email" placeholder="Correo Electrónico..." required="">
+                            <input type="submit" value="Enviar" class="botton" style="padding:8px 20px">
+                        </form>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
